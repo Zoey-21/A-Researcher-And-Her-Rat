@@ -17,6 +17,11 @@ func _physics_process(delta):
 				y_move_dir = -1
 			"down":
 				y_move_dir = +1
+		
 	move_and_slide(Vector2(x_move_dir * SPEED, y_move_dir * SPEED),Vector2(0,-1))
 	x_move_dir = 0
 	y_move_dir = 0
+
+func run(do_what):
+	if do_what == "start":
+		active = true
