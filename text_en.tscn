@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resorces/dynastium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://text_en.gd" type="Script" id=2]
+[ext_resource path="res://resorces/text_sound.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="text_en" type="Label"]
+margin_left = 3.08858
+margin_top = 0.964306
+margin_right = 355.089
+margin_bottom = 54.9643
+custom_fonts/font = SubResource( 1 )
+text = "WASD or Arrow Keys to move.
+Space or X to jump.
+Press Esc to go Back to the Main Menu"
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wait_between_letters" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -7.091
+
+[connection signal="timeout" from="wait_between_letters" to="." method="_on_wait_between_letters_timeout"]

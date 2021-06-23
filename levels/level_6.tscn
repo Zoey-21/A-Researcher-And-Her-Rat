@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resorces/walls.png" type="Texture" id=1]
 [ext_resource path="res://players/body.tscn" type="PackedScene" id=2]
 [ext_resource path="res://players/soul.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level_parts/door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://resorces/dynastium.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://text_en.tscn" type="PackedScene" id=5]
 [ext_resource path="res://level_parts/lava.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -32,10 +32,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
-
-[sub_resource type="DynamicFont" id=3]
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
 
 [node name="level_6" type="Node2D"]
 
@@ -69,18 +65,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect"]
-margin_left = 3.08858
-margin_top = 0.964306
-margin_right = 163.089
-margin_bottom = 16.9643
-custom_fonts/font = SubResource( 3 )
+[node name="text_en" parent="ColorRect" instance=ExtResource( 5 )]
+margin_left = -37.7526
+margin_top = 2.24748
+margin_right = 314.247
+margin_bottom = 56.2475
 text = "Touching lava will restart the 
 level!"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="lava" parent="." instance=ExtResource( 6 )]
 position = Vector2( 96, 528 )

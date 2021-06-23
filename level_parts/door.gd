@@ -23,7 +23,6 @@ func _on_door_body_exited(body):
 		player_inside = null
 
 func _physics_process(delta):
-	print(both_exit)
 	if inside and Input.is_action_just_pressed("interact"):
 		if both_exit == false:
 			both_exit = true

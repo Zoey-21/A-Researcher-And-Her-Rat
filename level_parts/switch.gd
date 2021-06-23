@@ -4,11 +4,13 @@ export var interact_with = ""
 export var do_what = ""
 var obj
 var inside = false
+var done = false
 
 func _on_switch_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and !done:
+		$Label.text = "Shift or Z to activate"
+		$ColorRect.visible = true
 		inside = true
-
 
 
 func _physics_process(delta):
@@ -20,8 +22,15 @@ func _physics_process(delta):
 				if i.name == interact_with:
 					obj = i
 					obj.run(do_what)
+					done = true
+					$ColorRect.visible = false
+					$Label.text = ""
+
 
 
 
 func _on_switch_body_exited(body):
-	inside = false
+	if body.is_in_group("player"):
+		$ColorRect.visible = false
+		$Label.text = ""
+		inside = false

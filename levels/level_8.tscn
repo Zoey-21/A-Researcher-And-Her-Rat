@@ -40,26 +40,6 @@ font_data = ExtResource( 5 )
 
 [node name="level_8" type="Node2D"]
 
-[node name="switch" parent="." instance=ExtResource( 7 )]
-position = Vector2( 296, 424 )
-interact_with = "moving_platform2"
-do_what = "start"
-
-[node name="switch2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 216, 280 )
-interact_with = "moving_platform3"
-do_what = "start"
-
-[node name="switch3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -72, 568 )
-interact_with = "moving_platform4"
-do_what = "start"
-
-[node name="switch4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 472, 440 )
-interact_with = "moving_platform"
-do_what = "start"
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -73,12 +53,6 @@ position = Vector2( 512, 416 )
 position = Vector2( 264, 424 )
 current = true
 zoom = Vector2( 0.762, 0.766 )
-
-[node name="body" parent="." instance=ExtResource( 2 )]
-position = Vector2( 32, 240 )
-
-[node name="soul" parent="." instance=ExtResource( 3 )]
-position = Vector2( 72, 248 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -123,3 +97,29 @@ active = false
 position = Vector2( 520, 384 )
 direction = "right"
 active = false
+
+[node name="switch" parent="." instance=ExtResource( 7 )]
+position = Vector2( 296, 424 )
+interact_with = "moving_platform2"
+do_what = "start"
+
+[node name="switch2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 216, 280 )
+interact_with = "moving_platform3"
+do_what = "start"
+
+[node name="switch3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -72, 568 )
+interact_with = "moving_platform4"
+do_what = "start"
+
+[node name="switch4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 472, 440 )
+interact_with = "moving_platform"
+do_what = "start"
+
+[node name="body" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 240 )
+
+[node name="soul" parent="." instance=ExtResource( 3 )]
+position = Vector2( 72, 248 )
